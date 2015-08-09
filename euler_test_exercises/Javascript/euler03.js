@@ -1,21 +1,17 @@
 function LargestPrimeFactorizer()
 {
+  var start = Date.now();
   var num = prompt("Would you like to see the largest prime factor of an integer??? If so, enter that number!!!")
   if(isNaN(num))
   {
     window.alert("That's not a number, silly!!!!")
   }
-  else
+  else if(num!=null)
   {
+    var factorArray=[];
     function LargestPrimeFactor(num)
     {
       var largeFactor=0;
-    // check what whole numbers num can be divided by, up to its highest divisor
-    // in the test of 1000, the lowest possible factor is 2 and the highest is 500
-    // the lowest check will always be 2, because 2 is the first prime
-    // the highest check will always be half of the input, half being the highest possible divisor
-    // correct output for an input of 1000: 5
-    // correct output for 1347: 449
       for(var factor = 2; factor <= Math.floor(num/2); factor++)
       {
         var isPrime=true;
@@ -37,6 +33,24 @@ function LargestPrimeFactorizer()
           //if so, store it
           if(isPrime)
           {
+            var notInArray=true;
+            while(notInArray)
+            {
+              for(var i = 0; i < factorArray.length; i++)
+              {
+                if(factorArray[i]===factor)
+                {
+                  notInArray=false;
+                }
+              }
+              if(notInArray)
+              {
+
+                  factorArray.push(factor);
+
+                notinArray=false;
+              }
+            }
             if(factor>largeFactor)
             {
               largeFactor = factor;
@@ -48,7 +62,7 @@ function LargestPrimeFactorizer()
     }
     if(LargestPrimeFactor(num) > 0)
     {
-      window.alert("The largest prime factor of " + num + " is " + LargestPrimeFactor(num) +"!!");
+      window.alert("The largest prime factor of " + num + " is " + LargestPrimeFactor(num) +"!!\n The factor(s) are " + factorArray.join(", ") + ".\n (It took me " + ((Date.now()-start)/1000).toFixed(2) + " ms to figure that out!)");
     }
     else
     {

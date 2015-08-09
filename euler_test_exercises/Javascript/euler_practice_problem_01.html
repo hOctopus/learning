@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        function SumOfMultiples( num, factor1, factor2 )
+        {
+          var sum = 0;
+          for(var i = 1; i < num; i++)
+          {
+              if( (i % factor1 === 0) || (i % factor2 === 0) )
+              {
+                sum += i;
+              }
+          }
+          return sum;
+        }
+        document.write(SumOfMultiples(1000,3,5))
+    </script>
+</body>
+</html>

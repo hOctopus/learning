@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+      function FibonacciEvens(num)
+      {
+      // returns the sum of all of the even Fibonacci terms up to a given number
+          var fibTerm = 1;
+          var lastTerm = 0;
+          var nextTerm = 0;
+          var evenTotal = 0;
+          while (fibTerm < num)
+          {
+              if (fibTerm % 2 === 0) // check if term is even
+              {
+                  evenTotal += fibTerm; // if it is, add it to our total
+              }
+      // the Fibonacci machine!!
+              nextTerm = lastTerm + fibTerm;
+      // defines next term in sequence as the current term + the previous term
+              lastTerm = fibTerm;
+      // stores the current term, to be used in the next iteration as the previous term
+              fibTerm = nextTerm;
+      // makes the next term into the current term that will pass through the next iteration
+          }
+          return evenTotal;
+        }
+        document.write(FibonacciEvens(4000000))
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        function SumOfFactors( num, factor1, factor2 )
+        {
+          //diplays the sum of all numbers divisible by
+          // either of the two given factors, up to a given maximum number
+          var sum = 0;
+          for(var i = 1; i < num; i++)
+          {
+              if( (i % factor1 === 0) || (i % factor2 === 0) )
+              {
+                sum += i;
+              }
+          }
+          return sum;
+        }
+        document.write(SumOfFactors(1000,3,5))
+    </script>
+</body>
+</html>

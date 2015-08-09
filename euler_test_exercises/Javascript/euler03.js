@@ -46,7 +46,7 @@ function LargestPrimeFactorizer()
       }
       return largeFactor;
     }
-    window.alert("The largest prime factor is " + LargestPrimeFactor(num) +"!!");
+    window.alert("The largest prime factor of " + num + " is " + LargestPrimeFactor(num) +"!!");
   }
-  window.alert("Click the button again to do it again!!");
+  window.alert("Click the button over there again to do it again!!");
 }

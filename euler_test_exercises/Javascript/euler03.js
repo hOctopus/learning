@@ -1,17 +1,24 @@
-function LargestPrimeFactorizer()
+function PrimeFactorizer()
 {
-  var start = Date.now();
-  var num = prompt("Would you like to see the largest prime factor of an integer??? If so, enter that number!!!")
+  var factorTime = 0;
+  var num = prompt("Would you like to see the largest prime factor of an number???\n\nIf so, enter that number!!! I will reveal the information!!\n\nAlso, I will round the number into an integer, in case you enter a decimal like a weirdo.\n");
+  var numOrig = num;
   if(isNaN(num))
   {
     window.alert("That's not a number, silly!!!!")
   }
+  else if(num>1000000000)
+  {
+    window.alert("Woah! That number is HUGE!!!\n\nKeep it under a billion (American) please, for the sake of your browser.")
+  }
   else if(num!=null)
   {
+    factorTime = Date.now();
+    num = Math.round(num);
     var factorArray=[];
     function LargestPrimeFactor(num)
     {
-      var largeFactor=0;
+      var largeFactor = 0;
       for(var factor = 2; factor <= Math.floor(num/2); factor++)
       {
         var isPrime=true;
@@ -62,12 +69,20 @@ function LargestPrimeFactorizer()
     }
     if(LargestPrimeFactor(num) > 0)
     {
-      window.alert("The largest prime factor of " + num + " is " + LargestPrimeFactor(num) +"!!\n The factor(s) are " + factorArray.join(", ") + ".\n (It took me " + ((Date.now()-start)/1000).toFixed(2) + " ms to figure that out!)");
+      var lpf = LargestPrimeFactor(num);
+      factorTime = Date.now()-factorTime;
+      var decimalYes = " ";
+      if(numOrig!=num)
+      {
+        decimalYes = " (rounding to " + num.toString() + ") ";
+      }
+      factorArray.pop();
+      window.alert("The largest prime factor of " + numOrig + decimalYes + "is " + lpf +"!!\n\nIn case you wondered, the other factor(s) are " + factorArray.join(", ") + ".\n\n(It took me " + (factorTime/1000).toFixed(3) + " seconds (" + factorTime.toFixed(1) + " ms) to figure all that out!)\n");
     }
     else
     {
-      window.alert("Woah! Guess what! " + num + " is a prime number!!!");
+      window.alert("Woah! Guess what! " + num + " is a prime number!!!\n");
     }
   }
-  window.alert("Click the button over there again to do it again!!");
+  window.alert("Click the button over there again to do it again!!\n");
 }

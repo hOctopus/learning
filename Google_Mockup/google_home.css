@@ -55,7 +55,7 @@ li a {
 }
 
 .logo {
-  background: url(file:///C:/Users/h.Octopus/Projects/learning/Google_Mockup/glogo.png) 99% 50% no-repeat;
+  background: url(glogo.png) 99% 50% no-repeat;
   background-size: contain;
 }
 

@@ -15,8 +15,8 @@ def translate (word)
   words.each do |a_word|
     big_head = a_word.capitalized?
     letters = a_word.chars
-    ph = "" # a_word.slice! a_word[/aeiou/i
-#   return ph if a_word == "banana"
+    ph = "" 
+
     v_start = /\Aaeiou/i =~ word.chars.first
     v_found = false
     i = 0

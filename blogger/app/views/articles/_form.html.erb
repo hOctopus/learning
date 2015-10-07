@@ -13,6 +13,13 @@
     <%= f.text_area :body %>
   </p>
   <p>
+    <%= f.label :tag_list %><br>
+    <%= f.text_field :tag_list %><br>
+  </p>
+  <p>
     <%= f.submit %>
+  </p>
+  <p class = "smaller">
+    <%= link_to "<< Cancel and Return to Index", root_path %>
   </p>
 <% end %>

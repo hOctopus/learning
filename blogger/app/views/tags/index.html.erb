@@ -1,0 +1,14 @@
+<h1>All Tags</h1>
+
+<% @tags.each do |tag| %>
+  <li>
+    <%= link_to tag.name, tag_path(tag.id), class: 'article_title' %>
+    <p class = "smaller"><%= link_to "Delete Tag", tag_path(tag), method: :delete, data: {confirm: "Really delete the tag?"} %>
+  </li>
+<% end %><br>
+
+<% if @tags.size == 0 %>
+  <h3>NO TAGS FOUND</h3><br>
+<% end %>
+
+<%= link_to "<< Return to Index", root_path, class: 'smaller' %>

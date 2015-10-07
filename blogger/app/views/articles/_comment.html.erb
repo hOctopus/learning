@@ -1,6 +1,6 @@
 <div>
   <h4>Comment by <%= comment.author_name %></h4>
   <p class="comment"><%= comment.body %></p>
-  <p class="posted">Comment posted <%= distance_of_time_in_words(comment.created_at, Time.now) %> ago.</p>
-  <p><%= link_to "Delete Comment", article_comment_path(comment.article, comment), method: :delete, data: {confirm: "Really delete the comment?"} %>
+  <p class="smaller slanted">Comment posted <%= distance_of_time_in_words(comment.created_at, Time.now) %> ago.</p>
+  <p class="smaller"><%= link_to "Delete Comment", article_comment_path(comment.article, comment), method: :delete, data: {confirm: "Really delete the comment?"} %>
 </div>

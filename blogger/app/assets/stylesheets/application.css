@@ -2,4 +2,5 @@
 div.field_with_errors label{color: red; font-weight:bold}
 div.field_with_errors input{border: 3px solid red}
 .smaller{ font-size: 0.8em }
+.smallest{ font-size: 0.7em }
 .slanted{ font-style: italic }

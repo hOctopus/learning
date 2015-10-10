@@ -7,8 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p class="flash"><%= flash.notice %></p>
-<%= yield %>
+  <p class="flash">
+    <%= flash.notice %>
+  </p>
+  <div id="container">
+    <div id="content">
+      <%= yield %>
+      <hr>
+      <h6>
+        <% if logged_in? %>
+          <p>Logged in as <%= link_to "#{current_user.email}", authors_path %></p>
+          <%= link_to "(logout)", logout_path, class: "smallest" %>
+        <% else %>
+          <%= link_to "(login)", login_path, class: "smallest" %>
+        <% end %>
+      </h6>
+    </div>
+  </div>
 
 </body>
 </html>

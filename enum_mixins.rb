@@ -1,3 +1,4 @@
+# Project to mimic Enumerable methods and practice mixins, and passing blocks and procs
 module Enumerable
 
   def my_each
@@ -100,6 +101,7 @@ module Enumerable
 
 end
 
+# test functionality of #my_inject
 def multiply_els(arr)
   return ArgumentError, "Must pass array to method" unless arr.is_a?(Array)
   result = arr.my_inject { |product, arg| product * arg }
